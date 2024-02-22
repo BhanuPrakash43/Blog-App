@@ -1,0 +1,32 @@
+label {
+  text-align: center;
+}
+
+.loginForm {
+  max-width: 400px;
+  width: 90%;
+  margin: 3rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formGroup input {
+  width: 90%;
+  height: 40px;
+  margin-bottom: 15px;
+  padding: 0 10px;
+  font-size: 1.1rem;
+}
+
+.formGroup button {
+  width: 96%;
+  height: 40px;
+  font-size: 1.1rem;
+}
+
+@media screen and (max-width: 500px) {
+  .formGroup input {
+    margin-bottom: 20px;
+  }
+}
