@@ -4,6 +4,8 @@ import axios from "axios";
 import { BASE_URL } from "../constants";
 import { useAuth } from "../contexts/AuthContextProvider";
 import { useNavigate } from "react-router-dom";
+import Editor from "./Editor";
+import "react-quill/dist/quill.snow.css";
 
 function CreateBlog() {
   const {
@@ -43,11 +45,11 @@ function CreateBlog() {
   }
   return (
     <form onSubmit={handleSubmit} className={styles.createBlogForm}>
-      <div>
+      <div className={styles.container}>
         <input
           type="text"
           name="heading"
-          placeholder="Heading"
+          placeholder="Blog heading"
           id="heading"
           value={heading}
           onChange={(e) => setHeading(e.target.value)}
@@ -56,24 +58,18 @@ function CreateBlog() {
         <input
           type="text"
           name="category"
-          placeholder="Category"
+          placeholder="Blog category"
           id="category"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
         />
 
-        <textarea
-          name="blog-body"
-          placeholder="Write your blog..."
-          id="blog-body"
-          cols="30"
-          rows="10"
-          value={body}
-          onChange={(e) => setBody(e.target.value)}
-        ></textarea>
+        <div className={styles.bodyContent}>
+          <Editor value={body} onChange={setBody} />
+        </div>
 
         <button type="submit" disabled={isLoading}>
-          {isLoading ? "Creating ..." : "create"}
+          {isLoading ? "Creating ..." : "Create Blog"}
         </button>
         {error && <p>{error}</p>}
       </div>

@@ -16,7 +16,7 @@ function SingleBlog() {
     isLoading,
     data: singleBlog,
   } = useAxiosGet({ endpoint: BASE_URL + `/${id}`, sendToken: true });
-  const { user_id: blogUserID, heading, body, category } = singleBlog;
+  const { user_id: blogUserID, heading, body, category } = singleBlog || {};
 
   async function deleteBlog() {
     await axios.delete(BASE_URL + `/${id}`, {
@@ -35,16 +35,28 @@ function SingleBlog() {
   }
   return (
     <div className={styles.container}>
-      <h3>{heading}</h3>
-      <small>{category}</small>
-      <p>{body}</p>
-      {user_id === blogUserID && <button onClick={deleteBlog}>Delete</button>}
-
-      {user_id === blogUserID && (
-        <div>
-          <Link to={`/update/${id}`}>Edit this post</Link>
-        </div>
-      )}
+      <h1>
+        {heading} |{" "}
+        <small style={{ fontSize: "20px", fontWeight: "400" }}>
+          {category}
+        </small>
+      </h1>
+      <div className={styles.catBtn}>
+        {/* <span className={styles.impBtn}> */}
+        {user_id === blogUserID && (
+          <Link to={`/update/${id}`} className={styles.postBtn}>
+            Edit Post
+          </Link>
+        )}
+        {user_id === blogUserID && (
+          <button onClick={deleteBlog} className={styles.deleteBtn}>
+            Delete
+          </button>
+        )}
+        {/* </span> */}
+      </div>
+      {/* <p>{body}</p> */}
+      <div className="content" dangerouslySetInnerHTML={{ __html: body }} />
     </div>
   );
 }

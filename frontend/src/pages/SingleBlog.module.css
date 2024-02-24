@@ -1,7 +1,26 @@
 .container {
   max-width: 1400px;
-  width: 90%;
-  margin: auto;
+  width: 77%;
+  margin: 2rem auto;
   border: 2px solid black;
-  padding: 0 20px;
+  border-radius: 4px;
+  padding: 5px 20px;
+}
+
+.catBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4em;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.postBtn {
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: 0.3em 1.2em;
+}
+.postBtn:hover {
+  text-decoration: underline;
 }

@@ -4,6 +4,7 @@ import { BASE_URL } from "../constants.js";
 import Blog from "../components/Blog.jsx";
 import styles from "./Home.module.css";
 import useAxiosGet from "../hooks/useAxiosGet.jsx";
+
 function Home() {
   const {
     isLoading,

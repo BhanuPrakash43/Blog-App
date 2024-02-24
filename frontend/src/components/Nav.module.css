@@ -1,7 +1,7 @@
 .nav {
   display: flex;
   max-width: 1400px;
-  width: 90%;
+  width: 80%;
   margin: auto;
   height: 70px;
   align-items: center;
@@ -11,12 +11,105 @@
 .navItems {
   display: flex;
   gap: 1rem;
+  justify-content: center;
   align-items: center;
   font-size: 1.1rem;
   font-weight: bold;
   list-style-type: none;
 }
 
+.loginSignupBtn {
+  display: flex;
+  gap: 2rem;
+}
+
+.impBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.blogUtils {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
 .greet {
+  font-size: 1.3rem;
+  font-weight: 700;
   text-transform: capitalize;
+}
+
+@media screen and (min-width: 700px) {
+  .mobileMenuIcon {
+    display: none;
+  }
+}
+
+/* Media query for mobile menu */
+@media screen and (max-width: 700px) {
+  .navItems {
+    display: none;
+  }
+
+  .mobileMenuIcon {
+    cursor: pointer;
+  }
+
+  .loginSignupBtn {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    font-size: 1.2em;
+  }
+
+  .navItems.open .loginSignupBtn li a:hover {
+    transition: 0.25s;
+    padding: 4px 12px;
+    background-color: black;
+    border-radius: 4px;
+  }
+
+  .hamburgerMenu {
+    width: 50px;
+    height: 45px;
+    margin-top: 15px;
+  }
+
+  .navItems.open {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 10vh;
+    background-color: #2b3d93;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding-top: 10px;
+    transition: 0.45s ease;
+  }
+
+  .navItems.open li {
+    padding-bottom: 10px;
+  }
+
+  .navItems.open li a:hover {
+    transition: 0.25s;
+    padding: 5px 6px;
+    background-color: black;
+    border-radius: 4px;
+  }
+
+  .navItems.open li a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .navItems.open .impBtn {
+    padding-right: 15px;
+  }
 }

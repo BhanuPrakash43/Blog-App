@@ -4,6 +4,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import { BASE_URL } from "../constants";
 import { useAuth } from "../contexts/AuthContextProvider";
 import useAxiosGet from "../hooks/useAxiosGet";
+import styles from "./CreateBlog.module.css";
+import Editor from "./Editor";
 
 function UpdateBlog() {
   const navigate = useNavigate();
@@ -55,8 +57,8 @@ function UpdateBlog() {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <form>
-      <div>
+    <form className={styles.createBlogForm}>
+      <div className={styles.container}>
         <input
           type="text"
           name="heading"
@@ -75,18 +77,12 @@ function UpdateBlog() {
           onChange={(e) => setCategory(e.target.value)}
         />
 
-        <textarea
-          name="blog-body"
-          placeholder="Write your blog..."
-          id="blog-body"
-          cols="30"
-          rows="10"
-          value={body}
-          onChange={(e) => setBody(e.target.value)}
-        ></textarea>
+        <div className={styles.bodyContent}>
+          <Editor value={body} onChange={setBody} />
+        </div>
 
         <button type="button" onClick={updateBlog}>
-          Update
+          Update Blog
         </button>
       </div>
     </form>

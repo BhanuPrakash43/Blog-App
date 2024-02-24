@@ -1,10 +1,23 @@
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Nav.module.css";
 import { useAuth } from "../contexts/AuthContextProvider";
+import { useState } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 function Nav() {
   const navigate = useNavigate();
   const { auth, setAuth } = useAuth();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  function toggleMobileMenu() {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  }
+
+  function closeMobileMenu() {
+    setIsMobileMenuOpen(false);
+  }
+
   function logout() {
     setAuth({});
     localStorage.removeItem("user");
@@ -14,30 +27,55 @@ function Nav() {
   return (
     <nav className={styles.nav}>
       <h2>
-        <Link to="/">BlogApp</Link>
+        <Link to="/" onClick={closeMobileMenu}>
+          BlogApp
+        </Link>
       </h2>
-      <ul className={styles.navItems}>
-        {!auth?.access_token && (
-          <div className={styles.navItems}>
+      {auth?.access_token && (
+        <p className={styles.greet}>Welcome {auth.email.split("@")[0]}</p>
+      )}
+      <div
+        className={`${styles.mobileMenuIcon} ${
+          isMobileMenuOpen ? styles.open : ""
+        }`}
+        onClick={toggleMobileMenu}
+      >
+        <GiHamburgerMenu className={styles.hamburgerMenu} />
+      </div>
+
+      <ul
+        className={`${styles.navItems} ${isMobileMenuOpen ? styles.open : ""}`}
+      >
+        {!auth?.access_token ? (
+          <div className={styles.loginSignupBtn}>
             <li>
-              <Link to="login">Login</Link>
+              <Link to="login" onClick={closeMobileMenu}>
+                Login
+              </Link>
             </li>
             <li>
-              <Link to="signup">Signup</Link>
+              <Link to="signup" onClick={closeMobileMenu}>
+                Signup
+              </Link>
             </li>
           </div>
-        )}
-        {auth?.access_token && (
-          <div className={styles.navItems}>
-            <li>
-              <Link to="create">Create</Link>
-            </li>
-            <li>
-              <Link to="my-blogs">My Blogs</Link>
-            </li>
-            <li>
-              <p className={styles.greet}>welcome {auth.email.split("@")[0]}</p>
-            </li>
+        ) : (
+          <div className={styles.impBtn}>
+            <div className={styles.blogUtils}>
+              <li>
+                <Link to="create" onClick={closeMobileMenu}>
+                  Create Blog
+                </Link>
+              </li>
+              <li>
+                <Link to="my-blogs" onClick={closeMobileMenu}>
+                  My Blogs
+                </Link>
+              </li>
+            </div>
+            {/* <li>
+              <p className={styles.greet}>Welcome {auth.email.split("@")[0]}</p>
+            </li> */}
             <li>
               <button onClick={logout}>Logout</button>
             </li>
