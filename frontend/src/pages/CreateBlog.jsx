@@ -5,7 +5,6 @@ import { BASE_URL } from "../constants";
 import { useAuth } from "../contexts/AuthContextProvider";
 import { useNavigate } from "react-router-dom";
 import Editor from "./Editor";
-import "react-quill/dist/quill.snow.css";
 
 function CreateBlog() {
   const {
@@ -45,6 +44,7 @@ function CreateBlog() {
   }
   return (
     <form onSubmit={handleSubmit} className={styles.createBlogForm}>
+      <h1>Write your Blog post</h1>
       <div className={styles.container}>
         <input
           type="text"
@@ -63,13 +63,10 @@ function CreateBlog() {
           value={category}
           onChange={(e) => setCategory(e.target.value)}
         />
-
-        <div className={styles.bodyContent}>
-          <Editor value={body} onChange={setBody} />
-        </div>
+        <Editor value={body} onChange={setBody} />
 
         <button type="submit" disabled={isLoading}>
-          {isLoading ? "Creating ..." : "Create Blog"}
+          {isLoading ? "Creating..." : "Create Blog"}
         </button>
         {error && <p>{error}</p>}
       </div>

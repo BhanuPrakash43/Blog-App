@@ -20,7 +20,7 @@ function MyBlogs() {
   }
   return (
     <div className={styles.container}>
-      <h1>My Blogs</h1>
+      <h1 style={{color:"#149eca"}}>My Blogs</h1>
 
       {myBlogs.map((blog) => (
         <Blog key={blog._id} {...blog} />

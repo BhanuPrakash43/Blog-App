@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { BASE_URL, LOGIN_URL } from "../constants";
 import { useAuth } from "../contexts/AuthContextProvider";
+
 function Login() {
   const navigate = useNavigate();
   const { auth, setAuth } = useAuth();
@@ -37,11 +38,9 @@ function Login() {
   }
 
   return (
-    <>
-      <label>
-        <h1>Sign into your account</h1>
-      </label>
+    <div className={styles.container}>
       <form className={styles.loginForm} onSubmit={handleSubmit}>
+        <h1>Login to your account</h1>
         <div className={styles.formGroup}>
           <input
             type="email"
@@ -68,7 +67,7 @@ function Login() {
           {error && <p>{error}</p>}
         </div>
       </form>
-    </>
+    </div>
   );
 }
 export default Login;

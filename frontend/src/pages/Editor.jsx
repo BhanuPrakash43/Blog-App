@@ -1,4 +1,6 @@
 import ReactQuill from "react-quill";
+import styles from "./Editor.module.css";
+import "react-quill/dist/quill.snow.css";
 
 function Editor({ value, onChange }) {
   const modules = {
@@ -16,11 +18,12 @@ function Editor({ value, onChange }) {
     ],
   };
   return (
-    <div>
+    <div className={styles.editor}>
       <ReactQuill
         placeholder="Write your blog post here..."
         value={value}
         theme={"snow"}
+        r
         onChange={onChange}
         modules={modules}
       />

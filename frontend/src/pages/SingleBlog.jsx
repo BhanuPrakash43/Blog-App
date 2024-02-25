@@ -41,8 +41,9 @@ function SingleBlog() {
           {category}
         </small>
       </h1>
+      <div className={styles.content} dangerouslySetInnerHTML={{ __html: body }} />
+      {user_id === blogUserID && (<hr />)}
       <div className={styles.catBtn}>
-        {/* <span className={styles.impBtn}> */}
         {user_id === blogUserID && (
           <Link to={`/update/${id}`} className={styles.postBtn}>
             Edit Post
@@ -53,10 +54,7 @@ function SingleBlog() {
             Delete
           </button>
         )}
-        {/* </span> */}
       </div>
-      {/* <p>{body}</p> */}
-      <div className="content" dangerouslySetInnerHTML={{ __html: body }} />
     </div>
   );
 }

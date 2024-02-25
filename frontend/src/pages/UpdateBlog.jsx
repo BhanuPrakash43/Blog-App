@@ -53,11 +53,12 @@ function UpdateBlog() {
     }
   }
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <h1>Loading...</h1>;
   if (error) return <div>Error: {error.message}</div>;
 
   return (
     <form className={styles.createBlogForm}>
+      <h1>Update your Blog</h1>
       <div className={styles.container}>
         <input
           type="text"
@@ -77,9 +78,7 @@ function UpdateBlog() {
           onChange={(e) => setCategory(e.target.value)}
         />
 
-        <div className={styles.bodyContent}>
-          <Editor value={body} onChange={setBody} />
-        </div>
+        <Editor value={body} onChange={setBody} />
 
         <button type="button" onClick={updateBlog}>
           Update Blog

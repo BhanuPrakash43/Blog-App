@@ -8,6 +8,12 @@
   justify-content: space-between;
 }
 
+.nav h2 a {
+  color: #149eca;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
 .navItems {
   display: flex;
   gap: 1rem;
@@ -22,6 +28,11 @@
   display: flex;
   gap: 2rem;
 }
+.loginSignupBtn a {
+  border-radius: 10px;
+  padding: 0.3em 1.2em;
+  background-color: #0677a1;
+}
 
 .impBtn {
   display: flex;
@@ -31,15 +42,22 @@
 }
 
 .blogUtils {
+  font-size: 1.1rem;
   display: flex;
   gap: 1.5rem;
   align-items: center;
+}
+
+.blogUtils li a:hover {
+  text-decoration: underline;
+  transition: 0.35s;
 }
 
 .greet {
   font-size: 1.3rem;
   font-weight: 700;
   text-transform: capitalize;
+  padding: 20px;
 }
 
 @media screen and (min-width: 700px) {
@@ -48,7 +66,7 @@
   }
 }
 
-/* Media query for mobile menu */
+
 @media screen and (max-width: 700px) {
   .navItems {
     display: none;
@@ -61,15 +79,14 @@
   .loginSignupBtn {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 4rem;
-    font-size: 1.2em;
+    font-size: 1.2rem;
   }
 
   .navItems.open .loginSignupBtn li a:hover {
     transition: 0.25s;
-    padding: 4px 12px;
-    background-color: black;
-    border-radius: 4px;
+    text-decoration: underline;
   }
 
   .hamburgerMenu {
@@ -85,12 +102,13 @@
     align-items: center;
     width: 80%;
     height: 10vh;
-    background-color: #2b3d93;
+    background-color: #2d394f;
     position: absolute;
     top: 70px;
     right: 20px;
     padding-top: 10px;
     transition: 0.45s ease;
+    border-radius: 10px;
   }
 
   .navItems.open li {
@@ -99,17 +117,14 @@
 
   .navItems.open li a:hover {
     transition: 0.25s;
-    padding: 5px 6px;
-    background-color: black;
-    border-radius: 4px;
+    text-decoration: underline;
   }
-
   .navItems.open li a {
     color: #fff;
     text-decoration: none;
   }
 
-  .navItems.open .impBtn {
-    padding-right: 15px;
+  .greet {
+    text-align: center;
   }
 }

@@ -5,6 +5,11 @@
   align-items: center;
 }
 
+.createBlogForm > h1 {
+  text-align: center;
+  color: #149eca;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -13,32 +18,34 @@
 }
 
 .container input {
+  color: whitesmoke;
   width: 98%;
   height: 30px;
   font-size: 1.1rem;
   padding: 10px;
   margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: rgba(120, 131, 155, 0.2);
+  outline: none;
+  border: none;
 }
 
-.container .bodyContent {
-  width: 100%;
-  font-size: 1.1rem;
-  padding: 10px;
-  margin-bottom: 20px;
+.container input::placeholder {
+  color: rgb(148, 148, 148);
+}
+
+.container input:focus {
+  outline: 1.6px solid #149eca;
 }
 
 .container button {
   width: 100%;
   font-size: 1.2rem;
-  padding: 7px 15px;
+  padding: 0.5em 1.2em;
 }
 
-@media screen and (max-width: 768px) {
-  .container .bodyContent {
-    width: 105%;
-  }
-
+@media screen and (max-width: 700px) {
   .container button {
-    width: 105%;
+    width: 104%;
   }
 }

@@ -1,0 +1,9 @@
+.editor {
+  width: 98%;
+  font-size: 1.5rem;
+  padding: 10px;
+  margin-bottom: 20px;
+  color: whitesmoke;
+  background-color: rgba(120, 131, 155, 0.2);
+  border-radius: 10px;
+}

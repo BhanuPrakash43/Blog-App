@@ -43,11 +43,9 @@ function Signup() {
   }
 
   return (
-    <>
-      <label>
-        <h1>Create your account</h1>
-      </label>
+    <div className={styles.container}>
       <form className={styles.loginForm} onSubmit={handleSubmit}>
+        <h1>Create your account</h1>
         <div className={styles.formGroup}>
           <input
             type="email"
@@ -83,7 +81,7 @@ function Signup() {
           {error && <p>{error}</p>}
         </div>
       </form>
-    </>
+    </div>
   );
 }
 export default Signup;

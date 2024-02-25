@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import styles from "./Blog.module.css";
 
 function Blog({ _id: id, heading, category, body }) {
   const [expanded, setExpanded] = useState(false);
@@ -9,27 +10,19 @@ function Blog({ _id: id, heading, category, body }) {
   };
 
   return (
-    <div
-      style={{
-        border: "2px solid black",
-        borderRadius: "4px",
-        marginTop: "2rem",
-        padding: "1rem",
-        display: "block",
-      }}
-    >
+    <div className={styles.container}>
       {!expanded && (
         <Link
           to={`/${id}`}
           onClick={toggleExpanded}
           style={{ marginTop: "0.5rem" }}
         >
-          <h3>
+          <h2>
             {heading} |{" "}
             <small style={{ fontSize: "15px", fontWeight: "400" }}>
               {category}
             </small>
-          </h3>
+          </h2>
 
           <div
             style={{
@@ -41,7 +34,7 @@ function Blog({ _id: id, heading, category, body }) {
             }}
             dangerouslySetInnerHTML={{ __html: body }}
           />
-          <span style={{ color: "blue" }}>Read more</span>
+          <span className={styles.readMore}>Read more</span>
         </Link>
       )}
     </div>

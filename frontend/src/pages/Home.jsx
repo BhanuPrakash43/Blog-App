@@ -12,7 +12,7 @@ function Home() {
     data: blogs,
   } = useAxiosGet({ endpoint: BASE_URL, sendToken: false });
   if (isLoading) {
-    return <h1>Loading ....</h1>;
+    return <h1>Loading....</h1>;
   }
   if (error) {
     return <h1>{error}</h1>;
