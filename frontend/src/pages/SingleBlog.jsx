@@ -28,7 +28,7 @@ function SingleBlog() {
   }
 
   if (isLoading) {
-    return <h1>Loading </h1>;
+    return <h1>Loading... </h1>;
   }
   if (error) {
     return <h1>{error}</h1>;
@@ -41,8 +41,12 @@ function SingleBlog() {
           {category}
         </small>
       </h1>
-      <div className={styles.content} dangerouslySetInnerHTML={{ __html: body }} />
-      {user_id === blogUserID && (<hr />)}
+      <hr />
+      <div
+        className={styles.content}
+        dangerouslySetInnerHTML={{ __html: body }}
+      />
+      {user_id === blogUserID && <hr />}
       <div className={styles.catBtn}>
         {user_id === blogUserID && (
           <Link to={`/update/${id}`} className={styles.postBtn}>

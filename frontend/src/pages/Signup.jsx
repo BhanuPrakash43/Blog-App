@@ -1,7 +1,7 @@
 import { useState } from "react";
-import styles from "./Login.module.css";
+import styles from "./Signup.module.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SIGNUP_URL } from "../constants";
 import { useAuth } from "../contexts/AuthContextProvider";
 
@@ -44,7 +44,7 @@ function Signup() {
 
   return (
     <div className={styles.container}>
-      <form className={styles.loginForm} onSubmit={handleSubmit}>
+      <form className={styles.signupForm} onSubmit={handleSubmit}>
         <h1>Create your account</h1>
         <div className={styles.formGroup}>
           <input
@@ -75,11 +75,14 @@ function Signup() {
           />
 
           <button type="submit" disabled={isLoading}>
-            {isLoading ? "Signup ..." : "Signup"}
+            {isLoading ? "Sign  up..." : "Sign Up"}
           </button>
-          {isLoading && <p>Loading ....</p>}
+          {/* {isLoading && <p>Loading ....</p>} */}
           {error && <p>{error}</p>}
         </div>
+        <p>
+          Already have an account? <Link to="/login">Login</Link>
+        </p>
       </form>
     </div>
   );

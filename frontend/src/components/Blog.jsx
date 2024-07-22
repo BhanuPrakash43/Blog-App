@@ -24,6 +24,8 @@ function Blog({ _id: id, heading, category, body }) {
             </small>
           </h2>
 
+          <hr />
+
           <div
             style={{
               WebkitLineClamp: expanded ? "unset" : "2",

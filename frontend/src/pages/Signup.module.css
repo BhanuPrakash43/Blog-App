@@ -1,6 +1,6 @@
 .container {
   max-width: 1400px;
-  width: 80%;
+  width: 50%;
   height: 75vh;
   margin: auto;
   display: flex;
@@ -9,22 +9,22 @@
   align-items: center;
 }
 
-.loginForm {
+.signupForm {
   text-align: center;
   border-radius: 10px;
   padding: 2rem 2rem;
   background-color: #2b323f;
 }
 
-.loginForm > h1 {
+.signupForm > h1 {
   color: #149eca;
 }
 
-.loginForm a {
+.signupForm a {
   font-weight: normal;
 }
 
-.loginForm a:hover {
+.signupForm a:hover {
   border-bottom: 2px solid whitesmoke;
 }
 
@@ -50,12 +50,25 @@
   font-size: 1.1rem;
 }
 
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 60vw;
+  }
+
+  .formGroup button {
+    width: 95%;
+  }
+}
+
 @media screen and (max-width: 700px) {
+  .container {
+    width: 80%;
+  }
   .formGroup input {
     margin-bottom: 20px;
   }
 
-  .loginForm {
+  .signupForm {
     padding: 1em 2em 2em 2em;
   }
 

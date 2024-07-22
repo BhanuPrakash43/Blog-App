@@ -3,6 +3,7 @@
   max-width: 1400px;
   width: 80%;
   margin: auto;
+  margin-bottom: 2rem;
   height: 70px;
   align-items: center;
   justify-content: space-between;
@@ -29,22 +30,28 @@
   gap: 2rem;
 }
 .loginSignupBtn a {
-  border-radius: 10px;
-  padding: 0.3em 1.2em;
+  border-radius: 5px;
+  padding: 0.3rem 1.2rem;
   background-color: #0677a1;
+}
+
+.loginSignupBtn a:hover {
+  background-color: #2b90b5;
 }
 
 .impBtn {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .blogUtils {
   font-size: 1.1rem;
   display: flex;
-  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
   align-items: center;
 }
 
@@ -66,8 +73,11 @@
   }
 }
 
-
 @media screen and (max-width: 700px) {
+  .nav {
+    width: 95%;
+  }
+
   .navItems {
     display: none;
   }
@@ -78,15 +88,15 @@
 
   .loginSignupBtn {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 4rem;
+    gap: 1.5rem;
     font-size: 1.2rem;
   }
 
   .navItems.open .loginSignupBtn li a:hover {
     transition: 0.25s;
-    text-decoration: underline;
   }
 
   .hamburgerMenu {
@@ -100,13 +110,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
-    height: 10vh;
+    width: 35%;
+    height: 20vh;
     background-color: #2d394f;
     position: absolute;
     top: 70px;
     right: 20px;
-    padding-top: 10px;
+    padding: 10px 0;
     transition: 0.45s ease;
     border-radius: 10px;
   }
@@ -116,12 +126,25 @@
   }
 
   .navItems.open li a:hover {
+    /* text-decoration: underline; */
     transition: 0.25s;
-    text-decoration: underline;
   }
   .navItems.open li a {
     color: #fff;
     text-decoration: none;
+  }
+
+  .impBtn {
+    flex-direction: column;
+  }
+
+  .blogUtils {
+    flex-direction: column;
+  }
+
+  .blogUtils li a:hover {
+    text-decoration: underline;
+    transition: 0.35s;
   }
 
   .greet {

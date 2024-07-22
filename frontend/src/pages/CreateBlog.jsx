@@ -65,7 +65,7 @@ function CreateBlog() {
         />
         <Editor value={body} onChange={setBody} />
 
-        <button type="submit" disabled={isLoading}>
+        <button className={styles.createBtn} type="submit" disabled={isLoading}>
           {isLoading ? "Creating..." : "Create Blog"}
         </button>
         {error && <p>{error}</p>}

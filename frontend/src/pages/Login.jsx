@@ -1,8 +1,8 @@
 import { useState } from "react";
 import styles from "./Login.module.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { BASE_URL, LOGIN_URL } from "../constants";
+import { Link, useNavigate } from "react-router-dom";
+import { LOGIN_URL } from "../constants";
 import { useAuth } from "../contexts/AuthContextProvider";
 
 function Login() {
@@ -61,11 +61,14 @@ function Login() {
           />
 
           <button type="submit" disabled={isLoading}>
-            {isLoading ? "Login ..." : "Login"}
+            {isLoading ? "Login..." : "Login"}
           </button>
-          {isLoading && <p>Loading ....</p>}
+          {/* {isLoading && <p>Loading ....</p>} */}
           {error && <p>{error}</p>}
         </div>
+        <p>
+          Don't have an account? <Link to="/signup">Sign Up</Link>
+        </p>
       </form>
     </div>
   );

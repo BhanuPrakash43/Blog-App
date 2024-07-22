@@ -55,7 +55,7 @@ function Nav() {
             </li>
             <li>
               <Link to="signup" onClick={closeMobileMenu}>
-                Signup
+                Sign Up
               </Link>
             </li>
           </div>
@@ -64,7 +64,7 @@ function Nav() {
             <div className={styles.blogUtils}>
               <li>
                 <Link to="create" onClick={closeMobileMenu}>
-                  Create Blog
+                  Write Blog
                 </Link>
               </li>
               <li>
@@ -73,9 +73,6 @@ function Nav() {
                 </Link>
               </li>
             </div>
-            {/* <li>
-              <p className={styles.greet}>Welcome {auth.email.split("@")[0]}</p>
-            </li> */}
             <li>
               <button onClick={logout}>Logout</button>
             </li>

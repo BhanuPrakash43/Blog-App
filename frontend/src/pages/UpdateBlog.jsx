@@ -80,7 +80,7 @@ function UpdateBlog() {
 
         <Editor value={body} onChange={setBody} />
 
-        <button type="button" onClick={updateBlog}>
+        <button type="button" onClick={updateBlog} className={styles.createBtn}>
           Update Blog
         </button>
       </div>

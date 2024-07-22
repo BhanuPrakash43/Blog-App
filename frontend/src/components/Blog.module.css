@@ -1,14 +1,13 @@
 .container {
-    border: 2px solid whitesmoke;
-    border-radius: 10px;
-    margin-top: 2rem;;
-    padding: 1rem;
-    display: block;
+  display: block;
+  background-color: #2a2f3b;
+  padding: 1rem;
+  border-radius: 10px;
 }
 
 .readMore {
-    color: #149eca;
+  color: #149eca;
 }
 .readMore:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }

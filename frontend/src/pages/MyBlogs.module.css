@@ -4,6 +4,27 @@
   margin: auto;
 }
 
-.container h1{
+.myBlogContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.hrLine {
+  margin-top: 3rem;
+}
+
+.container h1 {
   text-align: center;
+}
+
+@media screen and (max-width: 840px) {
+  .myBlogContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (max-width: 700px) {
+  .container {
+    width: 95%;
+  }
 }

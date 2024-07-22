@@ -18,11 +18,14 @@ function Home() {
     return <h1>{error}</h1>;
   }
   return (
-    <div className={styles.blogs}>
-      {blogs.map((blog) => (
-        <Blog key={blog._id} {...blog} />
-      ))}
-    </div>
+    <>
+      <div className={styles.blogs}>
+        {blogs.map((blog) => (
+          <Blog key={blog._id} {...blog} />
+        ))}
+      </div>
+      <hr className={styles.hrLine} />
+    </>
   );
 }
 export default Home;

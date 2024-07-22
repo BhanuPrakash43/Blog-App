@@ -20,7 +20,7 @@ function useAxiosGet({ endpoint, sendToken }) {
       const response = await axios.get(endpoint, config);
       setData(response.data);
     } catch (error) {
-      setError("For reading the full blog please Login to your account");
+      setError("For reading the full blog please Login to your account.");
     } finally {
       setIsLoading(false);
     }

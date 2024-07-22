@@ -2,7 +2,7 @@
   max-width: 1400px;
   width: 77%;
   margin: 2rem auto;
-  border: 2px solid whitesmoke;
+  background-color: #2a2f3b;
   border-radius: 10px;
   padding: 5px 20px;
 }
@@ -18,21 +18,26 @@
   gap: 4em;
   margin: 20px auto;
   font-size: 1.1em;
-  border-radius: 10px;
 }
 
 .postBtn {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 0.5em 1.2em;
   background-color: #0677a1;
   text-align: center;
 }
 .postBtn:hover {
-  text-decoration: underline;
+  background-color: #2b90b5;
 }
 
 .deleteBtn {
   width: 100%;
   padding: 0.5em 1.2em;
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    width: 85%;
+  }
 }
